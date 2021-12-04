@@ -7,6 +7,9 @@ MAX_PWM_PERIOD = 2 ** 32 - 1
 @block
 def PwmControl_tb():
     """ Test bench for the PwmControl block.
+    Author: Jan Kuliga (4EiT)
+    Date: 04.12.2021
+    ###############
     There are two instances of this block. They share clk, rst_n and period signals.
     In order to check correctness of block's behavior, value of duty_cycle 
     parameter is changed over the time.

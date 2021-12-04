@@ -6,6 +6,9 @@ MAX_PWM_PERIOD = 2 ** 32 - 1
 @block
 def PwmControl(clk, rst_n, duty_cycle, period, pwm):
     """ PWM module
+    Author: Jan Kuliga (4EiT)
+    Date: 03.12.2021
+    ###############
     clk - clock input
     rst - reset input
     duty_cycle - input, requested duty cycle (in number of clock cycles)
