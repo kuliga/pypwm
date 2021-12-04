@@ -1,5 +1,4 @@
 from pwm import PwmControl
-from clk_driver import ClkDriver
 from myhdl import *
 import random
 MAX_PWM_PERIOD = 2 ** 32 - 1
@@ -9,10 +8,10 @@ MAX_PWM_PERIOD = 2 ** 32 - 1
 def PwmControl_tb():
     clk = Signal(bool(0))
     rst_n = ResetSignal(0, active=0, isasync=True)
+    period = Signal(intbv(100))
     pwm0, pwm1 = Signal(0), Signal(0)
     fixed_duty_cycle, randomized_duty_cycle = Signal(
         intbv(20)), Signal(intbv(13))
-    period = Signal(intbv(100))
     PwmControl_inst0 = PwmControl(clk, rst_n, fixed_duty_cycle, period, pwm0)
     PwmControl_inst1 = PwmControl(
         clk, rst_n, randomized_duty_cycle, period, pwm1)
