@@ -1,7 +1,6 @@
 from pwm import PwmControl
 from myhdl import *
 import random
-MAX_PWM_PERIOD = 2 ** 32 - 1
 
 
 @block
