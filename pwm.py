@@ -15,8 +15,8 @@ def PwmControl(clk, rst_n, duty_cycle, period, pwm):
     period - period of a time between continuous pwm cycles (in number of clock cycles)
     pwm - output
     """
-    cnt = Signal(intbv(0, 0, MAX_PWM_PERIOD))
-    duty_cycle_reg = Signal(intbv(0))
+    cnt = Signal(intbv(0, 0, MAX_PWM_PERIOD, 32))
+    duty_cycle_reg = Signal(intbv(0, 0, MAX_PWM_PERIOD, 32))
     cycle_completed = Signal(bool(0))
 
     @always_seq(clk.posedge, reset=rst_n)
